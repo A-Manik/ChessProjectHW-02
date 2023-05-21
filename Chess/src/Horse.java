@@ -25,8 +25,8 @@ public class Horse extends ChessPiece {
                         {line - 1, column - 2}, {line - 1, column + 2},
                         {line + 1, column - 2}, {line + 1, column + 2}};
 
-                for (int i = 0; i < positions.length; i++) {
-                    if (positions[i][0] == toLine && positions[i][1] == toColumn)
+                for (int[] position : positions) {
+                    if (position[0] == toLine && position[1] == toColumn)
                         return true;
                 }
             }
@@ -40,7 +40,6 @@ public class Horse extends ChessPiece {
     }
 
     public boolean checkPos(int pos) {
-        if (pos >= 0 && pos <= 7) return true;
-        else return false;
+        return pos >= 0 && pos <= 7;
     }
 }
